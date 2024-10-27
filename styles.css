@@ -1,0 +1,155 @@
+/* Basic Page Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: #0a0a0a;
+    color: #e040fb;
+}
+
+#languageSelector {
+    margin: 10px;
+    color: #e040fb;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 0 0 1px #ff00ff;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #e040fb;
+    text-shadow: 0 0 3px #ff00ff;
+    margin: 0.2em;
+}
+
+/* Main Container */
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    border: 2px solid #6a0dad;
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #3c096c 100%);
+    box-shadow: 0 0 10px #6a0dad;
+}
+
+/* Grid Styles */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(32, 20px);
+    grid-template-rows: repeat(32, 20px);
+    gap: 1px;
+    border: 2px solid #6a0dad;
+    box-shadow: 0 0 8px #6a0dad;
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    background-color: #2c003e;
+    border: 1px solid #3b0a5c;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.alive {
+    background-color: #e040fb;
+    box-shadow: 0 0 4px #ff00ff, 0 0 8px #ff00ff;
+}
+
+/* Controls and Metrics */
+#controls, #metrics, #chartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #e040fb;
+}
+
+#metric {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    color: #e040fb;
+}
+
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background: linear-gradient(45deg, #e040fb, #3c096c);
+    text-shadow: 0 0 3px #ff00ff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 8px #ff00ff;
+}
+
+button:hover {
+    background-color: #9d4edd;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Input Styling */
+input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #6a0dad;
+    color: #e040fb;
+    background-color: #1a1a2e;
+    text-align: center;
+    box-shadow: 0 0 6px #6a0dad;
+    transition: box-shadow 0.3s;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Metrics Styling */
+#metrics p, #metrics span {
+    font-size: 1.2em;
+    color: #e040fb;
+    text-shadow: 0 0 2px #ff00ff;
+}
+
+/* Chart */
+#populationChart {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #6a0dad;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #6a0dad;
+    background-color: #1a1a2e;
+}
+
+/* Toast Message Styling */
+#toastMessage {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #ff0077;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff0077;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#toastMessage.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}

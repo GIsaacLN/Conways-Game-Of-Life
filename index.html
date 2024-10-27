@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">Conway's Game of Life</h1>
+    <div id="container">
+        <div id="grid"></div>
+        <div id="controls">
+            <div id="languageSelector">
+                <span onclick="switchLanguage('en')">English</span> | <span onclick="switchLanguage('es')">Español</span>
+            </div>
+        
+            <input id="populationInput" type="number" min="1" max="1024" placeholder="Enter population size">
+            <button id="generate" onclick="generatePopulation()">Generate Population</button>
+            <button id="start" onclick="startGame()">Start</button>
+            <button id="pause" onclick="pauseGame()">Pause</button>
+            <button id="next" onclick="nextIteration()">Next</button>
+            <div id="metrics">
+                <div id="metric">
+                    <p id="currentPopulationLabel">Current Population:</p> <p id="currentPopulation">0</p>
+                </div>
+                <div id="metric">
+                    <p id="currentIterationLabel">Current Iteration:</p> <p id="currentIteration">0</p>
+                </div>
+            </div>
+            <div id="chartContainer">
+                <canvas id="populationChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Message Container -->
+    <div id="toastMessage" class="hidden">    
+        <p id="endMessage">Game Over: Population has reached zero.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
